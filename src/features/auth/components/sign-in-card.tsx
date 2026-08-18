@@ -1,5 +1,6 @@
 import { FcGoogle } from "react-icons/fc"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import {
     Card,
@@ -19,6 +20,9 @@ interface SignInCardProps {
 };
 
 export const SignInCard = ({ setState }: SignInCardProps) => {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    
     return (
         <Card className="w-full h-full p-8">
             <CardHeader className="px-0 pt-0">
@@ -26,23 +30,23 @@ export const SignInCard = ({ setState }: SignInCardProps) => {
                     Log in to continue
                 </CardTitle>
                 <CardDescription>
-                    User your email or another service to continue
+                    Use your email or another service to continue
                 </CardDescription>
             </CardHeader>
             <CardContent className="space-y-5 px-0 pb-0">
                 <form className="space-y-2.5">
                     <Input
                         disabled={false}
-                        value=""
-                        onChange={() => { }}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         placeholder="Email"
                         type="email"
                         required
                     />
                     <Input
                         disabled={false}
-                        value=""
-                        onChange={() => { }}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         placeholder="Password"
                         type="password"
                         required
