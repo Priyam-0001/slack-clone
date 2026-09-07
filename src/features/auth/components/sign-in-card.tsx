@@ -17,7 +17,7 @@ import { SignInFlow } from "../types"
 import { useAuthActions } from "@convex-dev/auth/react";
 import { TriangleAlert } from "lucide-react"
 
-interface SignInCardProps {
+interface SignInCardProps { 
     setState:  (state: SignInFlow) => void
 };
 
